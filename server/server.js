@@ -10,15 +10,6 @@ app.use(bodyParser.json());
 // Create a simple server
 var server = net.createServer(function (conn) {
 
-    // If connection is closed
-    conn.on("end", function() {
-        console.log('Server: Client disconnected');
-        // Close the server
-        server.close();
-        // End the process
-        process.exit(0);
-    });
-
     // Handle data from client
     conn.on("data", function(data) {
         data = JSON.parse(data);
@@ -37,7 +28,7 @@ var server = net.createServer(function (conn) {
     });
 
     app.post('/command', function(req, res) {
-      conn.write(JSON.stringify({response: "Command: " + req.body.command}));
+      conn.write(JSON.stringify({response: req.body.command}));
       res.end("yes");
     });
 });
@@ -45,7 +36,7 @@ var server = net.createServer(function (conn) {
 // Listen for connections
 server.listen(config.PORT_NET,
   config.ALLOWED_IPS,
-  config.HOST, 
+  config.HOST,
   function () {
     console.log("Server: Listening");
 });

@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "description": "Automate Basic Tasks",
     "dependencies": {
-        "net": "latest"
+        "net": "latest",
+        "python-shell": "latest"
     },
     "author": "scarecrow"
 }
