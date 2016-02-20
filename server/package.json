@@ -1,0 +1,11 @@
+{
+    "name": "AutomateServer",
+    "version": "0.0.0",
+    "description": "Automate Basic Tasks",
+    "dependencies": {
+        "express": "latest",
+        "net": "latest",
+        "body-parser": "latest"
+    },
+    "author": "scarecrow"
+}

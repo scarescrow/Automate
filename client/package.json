@@ -1,0 +1,9 @@
+{
+    "name": "AutomateClient",
+    "version": "0.0.0",
+    "description": "Automate Basic Tasks",
+    "dependencies": {
+        "net": "latest"
+    },
+    "author": "scarecrow"
+}
