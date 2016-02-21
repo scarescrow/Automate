@@ -10,7 +10,7 @@ data = r.text;
 
 soup = BeautifulSoup(data);
 
-magnet_element = soup.findAll('tr', {'class':'odd'})[0].find_all('td')[0].find_all('div')[0].find_all('a')[2];
+magnet_element = soup.findAll('tr', {'class':'odd'})[0].find_all('td')[0].find_all('div')[0].find_all('a')[-2];
 
 magnet_link = magnet_element.get('href');
 
