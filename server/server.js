@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 // Create a simple server
 var server = net.createServer(function (conn) {
 
+    conn.on("error", function(err) {
+      console.log("Connection Closed: " + err);
+    });
+
     // Handle data from client
     conn.on("data", function(data) {
         data = JSON.parse(data);
@@ -23,10 +27,6 @@ var server = net.createServer(function (conn) {
         )
     );
 
-    app.listen(config.PORT_APP, function() {
-      console.log("Express started");
-    });
-
     app.post('/command', function(req, res) {
       conn.write(JSON.stringify({response: req.body.command}));
       res.end("yes");
@@ -39,4 +39,8 @@ server.listen(config.PORT_NET,
   config.HOST,
   function () {
     console.log("Server: Listening");
+});
+
+app.listen(config.PORT_APP, function() {
+  console.log("Express started");
 });
