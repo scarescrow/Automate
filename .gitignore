@@ -2,4 +2,5 @@ client/config.js
 client/node_modules
 server/config.js
 server/node_modules
+android/Automate/app/src/main/java/scarecrow/beta/automate/config.java
 test.html

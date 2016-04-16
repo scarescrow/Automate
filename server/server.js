@@ -38,6 +38,7 @@ var server = net.createServer(function (conn) {
 
     app.post('/command', function(req, res) {
       conn.write(JSON.stringify({response: req.body.command}));
+	  console.log(req.body.command);
       res.end("yes");
     });
 
