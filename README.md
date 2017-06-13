@@ -2,25 +2,25 @@
 
 Automate tasks on your PC by sending commands from your mobile.
 
-##Components
+## Components
 
-####Server-side Node Server:
+#### Server-side Node Server:
 
 This sets up a server for TCP communication, and also starts an HTTP server to get commands posted to it, and transfer them to client.
 
-####Client-side Node Server:
+#### Client-side Node Server:
 
 This sets up a server on PC, and connects to the Server-Side Node Server. On receiving commands, it decides what action to take
 
-####Android App:
+#### Android App:
 
 This is a simple app to send commands as HTTP Post requests to the Server-Side Node Server.
 
-####Python Scripts
+#### Python Scripts
 
 These are called by the Client-side Node Server, depending on what action to take.
 
-##Install
+## Install
 
 First, clone the project:
 
@@ -28,7 +28,7 @@ First, clone the project:
 $ git clone https://github.com/scarescrow/Automate.git
 ```
 
-####Server
+#### Server
 
 1. Copy the server folder to the server machine.
 2. Rename config-example.js to config.js
@@ -39,7 +39,7 @@ $ git clone https://github.com/scarescrow/Automate.git
 	$ npm install
 	```
 	
-####Client-side
+#### Client-side
 
 1. Copy the client folder and python_scripts folder to the client machine.
 2. Rename config-example.js to config.js
@@ -50,26 +50,26 @@ $ git clone https://github.com/scarescrow/Automate.git
 	$ npm install
 	```
 	
-####Android App
+#### Android App
 
 1. Rename android/Automate/app/src/main/java/scarecrow/beta/automate/config_example.java to config.java.
 2. Change URL string from localhost to the Server's IP.
 3. Generate APK.
 4. Install this APK on your phone.
 
-####Python Scripts
+#### Python Scripts
 
 Install Python on your client machine.
 
-##Usage
+## Usage
 
-#####Server:
+##### Server:
 
 ```bash
 $ node server.js
 ```
 
-#####Client:
+##### Client:
 
 ```bash
 $ node client.js
@@ -77,7 +77,7 @@ $ node client.js
 
 That's it. The server on the client machine will connect to the server on the server machine. Also, the HTTP server on the server machine will start. Now, open the app on your phone, and type (or speak) a command, eg. Say Hello, and click on "Go". In a moment, you'll see "Hello" appear on the terminal in the client machine.
 
-####Note:
+#### Note:
 
 You could also send the HTTP Post request as a cURL command as follows:
 
@@ -85,9 +85,9 @@ You could also send the HTTP Post request as a cURL command as follows:
 $ curl --data "command=say hello" http://<SERVER_IP>:<SERVER_EXPRESS_PORT>/command
 ```
 
-##Currently Supported Commands
+## Currently Supported Commands
 
-####1. Download Torrents
+#### 1. Download Torrents
 
 (Needs uTorrent installed)
 
@@ -103,6 +103,6 @@ The software will search on kickass torrents the given search string, and gets t
 
 (More commands to come. Suggestions Welcome!)
 
-##License
+## License
 
 Open sourced under [MIT License](LICENSE)
